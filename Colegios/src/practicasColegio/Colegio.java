@@ -1,6 +1,7 @@
 package practicasColegio;
 
 public class Colegio {
+	// constructor
 	public Colegio (String nombreColegio, int numAlumnos) {
 		this.nombreColegio=nombreColegio;
 		 arrayAlumnos= new Alumno[numAlumnos];
