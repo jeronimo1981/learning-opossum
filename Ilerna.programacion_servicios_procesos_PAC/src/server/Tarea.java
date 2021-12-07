@@ -12,7 +12,7 @@ public class Tarea {
 	private String descripcion;
 	private String estado;
 	
-	
+	//constructor
 	public Tarea(String descripcion, String estado) {
 		this.descripcion=descripcion;
 		this.estado=estado;
