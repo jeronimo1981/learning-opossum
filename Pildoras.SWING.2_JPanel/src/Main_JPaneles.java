@@ -1,5 +1,6 @@
 import javax.swing.JFrame;
 import javax.swing.JPanel;
+import java.awt.*;
 
 public class Main_JPaneles {
 
@@ -17,6 +18,10 @@ class MiJFrame extends JFrame{
 		setBounds(400,200,300,300);
 		setTitle("escritura en un JFrame");
 		setVisible(true);
+		//Instanciamos un objeto de tipo MiJPanel para tener un JPanel sobre el que se pueda escribir
+		MiJPanel mijpanel1 = new MiJPanel();
+		//agregamos el JPanel al marco/JFrame
+		add(mijpanel1);
 		
 	}
 }
@@ -28,7 +33,17 @@ class MiJFrame extends JFrame{
  
  class MiJPanel extends JPanel{
 	 MiJPanel(){
-		 //Las dimensiones por defecto del JPanel es la misma que la del marco que lo alberga. Podemos dejarlo así
-		 //o edimensionarlo según nos convenga
+		 //Las dimensiones por defecto del JPanel, y la ubicación donde comience, es la misma que la del marco que lo alberga. Podemos dejarlo así
+		 //o redimensionarlo según nos convenga
+		 
+		
+		 
+	 }
+	 //Sobreescibimos el método paintComponent que viene en la clase JPanel
+	 public void paintComponent(Graphics g) {
+		 super.paintComponent(g);//con super hacemos que pinte componentes como hace esta función en la clase padre. 
+		 //Aqui hay que redefinir esta función, ya que hemos sobreescrito el metodo.
+		 g.drawString("Mi panel",20,20);//con este metodo dibujarString, escribimos un string en la posición x20 y20
+		 
 	 }
  }
